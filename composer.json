@@ -1,6 +1,6 @@
 {
     "name": "harryqt/trongrid-php-sdk",
-    "description": "Trongrid api php sdk library.",
+    "description": "Trongrid api php sdk library",
     "type": "library",
     "autoload": {
         "psr-4": {
@@ -9,12 +9,11 @@
     },
     "authors": [
         {
-            "name": "harry",
+            "name": "Harry",
             "email": "contact@harry.plus"
         }
     ],
     "require": {
-        "php": ">=8.1",
         "saloonphp/saloon": "^3.8",
         "saloonphp/pagination-plugin": "^2.0"
     },

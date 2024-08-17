@@ -12,10 +12,7 @@ use Saloon\PaginationPlugin\Paginator;
 
 class Connector extends SaloonConnector implements HasPagination
 {
-    public function __construct(
-        public readonly string $token
-    ) {
-    }
+    public function __construct(public readonly string $token) {}
 
     public function resolveBaseUrl(): string
     {
@@ -28,7 +25,7 @@ class Connector extends SaloonConnector implements HasPagination
         {
             protected function isLastPage(Response $response): bool
             {
-                return is_null($response->json('meta.links.next'));
+                return $response->json('meta.links.next') === null;
             }
 
             protected function getPageItems(Response $response, Request $request): array
@@ -51,8 +48,9 @@ class Connector extends SaloonConnector implements HasPagination
     {
         return [
             'Accept' => 'application/json',
-            'Accept-Encoding' => 'gzip',
             'Tron-Pro-Api-Key' => $this->token,
+            // Request all supported encodings of libcurl by setting an empty string
+            'Accept-Encoding' => '',
         ];
     }
 }

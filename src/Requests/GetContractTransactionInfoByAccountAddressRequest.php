@@ -19,8 +19,7 @@ class GetContractTransactionInfoByAccountAddressRequest extends BaseRequest
         public readonly ?string $contract_address = 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
         public readonly bool $only_to = false,
         public readonly bool $only_from = false,
-    ) {
-    }
+    ) {}
 
     public function resolveEndpoint(): string
     {
