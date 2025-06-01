@@ -49,8 +49,6 @@ class Connector extends SaloonConnector implements HasPagination
         return [
             'Accept' => 'application/json',
             'Tron-Pro-Api-Key' => $this->token,
-            // Request all supported encodings of libcurl by setting an empty string
-            'Accept-Encoding' => '',
         ];
     }
 }

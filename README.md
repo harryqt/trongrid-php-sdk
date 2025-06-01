@@ -15,12 +15,12 @@ use Harryqt\Trongrid\Requests\GetContractTransactionInfoByAccountAddressRequest;
 $connector = new Connector('token');
 $response = $connector->send(new GetContractTransactionInfoByAccountAddressRequest);
 
-dd($response->body());
+print_r($response->body());
 ```
 
 ## Hyperf
 
-Use `HyperfConnector` for coroutineization of the HTTP client when using on [Hyperf](https://github.com/hyperf/hyperf) framework.
+Example of coroutineization of the HTTP client when using on [Hyperf](https://github.com/hyperf/hyperf) framework.
 
 ```php
 use GuzzleHttp\HandlerStack;

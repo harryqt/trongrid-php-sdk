@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Harryqt\Trongrid\Requests;
 
-class GetContractTransactionInfoByAccountAddressRequest extends BaseRequest
+use Saloon\PaginationPlugin\Contracts\Paginatable;
+
+class GetContractTransactionInfoByAccountAddressRequest extends BaseRequest implements Paginatable
 {
     public function __construct(
         public readonly string $address,
@@ -23,6 +25,6 @@ class GetContractTransactionInfoByAccountAddressRequest extends BaseRequest
 
     public function resolveEndpoint(): string
     {
-        return '/accounts/'.$this->address.'/transactions/'.$this->contract;
+        return "/accounts/$this->address/transactions/$this->contract";
     }
 }
