@@ -9,10 +9,10 @@ composer require harryqt/trongrid-php-sdk
 ## Usage
 
 ```php
-use Harryqt\Trongrid\Connector;
+use Harryqt\Trongrid\TrongridConnector;
 use Harryqt\Trongrid\Requests\GetContractTransactionInfoByAccountAddressRequest;
 
-$connector = new Connector('token');
+$connector = new TrongridConnector('token');
 $response = $connector->send(new GetContractTransactionInfoByAccountAddressRequest);
 
 print_r($response->body());
@@ -25,10 +25,10 @@ Example of coroutineization of the HTTP client when using on [Hyperf](https://gi
 ```php
 use GuzzleHttp\HandlerStack;
 use Hyperf\Guzzle\CoroutineHandler;
-use Harryqt\Trongrid\Connector;
+use Harryqt\Trongrid\TrongridConnector;
 use Saloon\Http\Senders\GuzzleSender;
 
-class HyperfConnector extends Connector
+class HyperfConnector extends TrongridConnector
 {
     public function __construct(public readonly string $token)
     {

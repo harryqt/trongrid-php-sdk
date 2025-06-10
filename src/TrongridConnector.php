@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Harryqt\Trongrid;
 
-use Saloon\Http\Connector as SaloonConnector;
+use Saloon\Http\Connector;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\PaginationPlugin\Contracts\HasPagination;
 use Saloon\PaginationPlugin\Paginator;
 
-class Connector extends SaloonConnector implements HasPagination
+class TrongridConnector extends Connector implements HasPagination
 {
     public function __construct(public readonly string $token) {}
 
