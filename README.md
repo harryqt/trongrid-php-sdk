@@ -13,7 +13,11 @@ use Harryqt\Trongrid\TrongridConnector;
 use Harryqt\Trongrid\Requests\GetContractTransactionInfoByAccountAddressRequest;
 
 $connector = new TrongridConnector('token');
-$response = $connector->send(new GetContractTransactionInfoByAccountAddressRequest);
+$request = new GetContractTransactionInfoByAccountAddressRequest(
+    address: 'TS2GiCi3duopsEkdMhaSXS7zPjNt9ydbvi',
+    only_confirmed: true
+);
+$response = $connector->send($request);
 
 print_r($response->body());
 ```

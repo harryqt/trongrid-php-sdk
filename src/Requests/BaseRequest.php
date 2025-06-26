@@ -22,6 +22,7 @@ abstract class BaseRequest extends Request
     protected function getConstructorParams(): array
     {
         $parameters = [];
+
         foreach ((new \ReflectionClass($this))->getConstructor()->getParameters() as $param) {
             $name = $param->getName();
             $parameters[$name] = $this->{$name};

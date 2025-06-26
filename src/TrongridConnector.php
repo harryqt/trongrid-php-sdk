@@ -12,7 +12,7 @@ use Saloon\PaginationPlugin\Paginator;
 
 class TrongridConnector extends Connector implements HasPagination
 {
-    public function __construct(public readonly string $token) {}
+    public function __construct(protected readonly string $token) {}
 
     public function resolveBaseUrl(): string
     {

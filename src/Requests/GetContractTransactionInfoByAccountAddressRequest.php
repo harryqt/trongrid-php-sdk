@@ -9,18 +9,18 @@ use Saloon\PaginationPlugin\Contracts\Paginatable;
 class GetContractTransactionInfoByAccountAddressRequest extends BaseRequest implements Paginatable
 {
     public function __construct(
-        public readonly string $address,
-        public readonly string $contract = 'trc20',
-        public readonly bool $only_confirmed = false,
-        public readonly bool $only_unconfirmed = false,
-        public readonly int $limit = 20,
-        public readonly ?string $fingerprint = null,
-        public readonly ?string $order_by = null,
-        public readonly ?int $min_timestamp = null,
-        public readonly ?int $max_timestamp = null,
-        public readonly ?string $contract_address = 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
-        public readonly bool $only_to = false,
-        public readonly bool $only_from = false,
+        protected readonly string $address,
+        protected readonly string $contract = 'trc20',
+        protected readonly bool $only_confirmed = false,
+        protected readonly bool $only_unconfirmed = false,
+        protected readonly int $limit = 20,
+        protected readonly ?string $fingerprint = null,
+        protected readonly ?string $order_by = null,
+        protected readonly ?int $min_timestamp = null,
+        protected readonly ?int $max_timestamp = null,
+        protected readonly ?string $contract_address = 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
+        protected readonly bool $only_to = false,
+        protected readonly bool $only_from = false,
     ) {}
 
     public function resolveEndpoint(): string
