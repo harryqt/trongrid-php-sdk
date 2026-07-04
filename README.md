@@ -1,6 +1,6 @@
 # Trongrid PHP SDK
 
-[Trongrid](https://www.trongrid.io) PHP SDK built using [Saloon](https://github.com/saloonphp/saloon).
+[Trongrid](https://www.trongrid.io) PHP SDK
 
 ## Install
 
