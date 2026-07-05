@@ -9,7 +9,7 @@ use Saloon\PaginationPlugin\Contracts\Paginatable;
 class GetEventsByBlockNumberRequest extends BaseRequest implements Paginatable
 {
     public function __construct(
-        protected readonly int $block_number,
+        protected readonly int|string $block_number,
         protected readonly bool $only_confirmed = false,
         protected readonly int $limit = 20,
         protected readonly ?string $fingerprint = null,
