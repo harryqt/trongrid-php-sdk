@@ -12,11 +12,14 @@ use Saloon\PaginationPlugin\Paginator;
 
 class TrongridConnector extends Connector implements HasPagination
 {
-    public function __construct(protected readonly string $token) {}
+    public function __construct(
+        protected readonly string $token,
+        protected readonly string $baseUrl = 'https://api.trongrid.io/v1'
+    ) {}
 
     public function resolveBaseUrl(): string
     {
-        return 'https://api.trongrid.io/v1';
+        return $this->baseUrl;
     }
 
     public function paginate(Request $request): Paginator
