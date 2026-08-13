@@ -11,20 +11,24 @@ abstract class BaseRequest extends Request
 {
     protected Method $method = Method::GET;
 
+    protected array $queryParameterExcludes = [];
+
     protected function defaultQuery(): array
     {
         return $this->getConstructorParams();
     }
 
-    /**
-     * Return constructor parameters as array
-     */
     protected function getConstructorParams(): array
     {
         $parameters = [];
 
         foreach ((new \ReflectionClass($this))->getConstructor()->getParameters() as $param) {
             $name = $param->getName();
+
+            if (in_array($name, $this->queryParameterExcludes)) {
+                continue;
+            }
+
             $parameters[$name] = $this->{$name};
         }
 

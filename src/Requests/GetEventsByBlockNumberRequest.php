@@ -8,6 +8,10 @@ use Saloon\PaginationPlugin\Contracts\Paginatable;
 
 class GetEventsByBlockNumberRequest extends BaseRequest implements Paginatable
 {
+    protected array $queryParameterExcludes = [
+        'block_number',
+    ];
+
     public function __construct(
         protected readonly int|string $block_number,
         protected readonly bool $only_confirmed = false,
